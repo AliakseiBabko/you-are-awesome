@@ -5,14 +5,14 @@ const createNotEnumerableProperty = () => {};
 const createProtoMagicObject = () => {};
 const incrementor = () => {};
 const asyncIncrementor = () => {};
-const createIncrementer = () => {};
+const createIncrementer = () => {let inc; return inc++;};
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
-const getDeepPropertiesCount = () => {};
-const createSerializedObject = () => {};
+const returnBackInSecond = (param) => {setTimeout(param, 900);};
+const getDeepPropertiesCount = (obj) => { return Object.keys(obj).length; };
+const createSerializedObject = () => {object = { valueOf(){let a = 'object'; return a;}}; return object;};
 const toBuffer = () => {};
-const sortByProto = () => {};
+const sortByProto = (arr) => { return arr.sort(); };
 
 exports.createEnumerableProperty = createEnumerableProperty;
 exports.createNotEnumerableProperty = createNotEnumerableProperty;
